@@ -1,0 +1,142 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Invoice</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="license" href="https://www.opensource.org/licenses/mit-license/">
+	<script src="script.js"></script>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script>
+		function printFunction() {
+			window.print();
+		}
+	</script>
+</head>
+
+<body id="printAllBody">
+	<header>
+		<!-- <h1>Invoice</h1> -->
+		<address contenteditable>
+			<p>Jonathan Neal</p>
+			<p>101 E. Chapman Ave<br>Orange, CA 92866</p>
+			<p>(800) 555-123455</p>
+			<p>jonathan@orangetest.com</p>
+		</address>
+		<span><img alt="" src="http://www.fernandezcontadorespublicos.com/Content/Logo2.jpg"><input type="file"
+				accept="image/*"></span>
+	</header>
+	<article>
+		<h1>Recipient</h1>
+		<address contenteditable>
+			<!-- <p>Some Company<br>c/o Some Guy</p> -->
+		</address>
+		<table class="meta">
+			<tr>
+				<th><span contenteditable>Fecha</span></th>
+				<td><span contenteditable>01 Junio, 2021</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>RUT Emisor</span></th>
+				<td><span contenteditable>212602710010</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Serie</span></th>
+				<td><span contenteditable>D</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Número</span></th>
+				<td><span contenteditable>1235</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Tipo de Factura</span></th>
+				<td><span contenteditable>e-Factura</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Forma de Pago</span></th>
+				<td><span contenteditable>Contado</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Fecha de Vencimiento</span></th>
+				<td><span contenteditable>30/06/2021</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>RUT Comprador</span></th>
+				<td><span contenteditable>170307480019</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Moneda</span></th>
+				<td><span contenteditable>Peso Uruguayo</span></td>
+			</tr>
+
+			<tr hidden>
+				<th><span contenteditable>Amount Due</span></th>
+				<td><span id="prefix" contenteditable>$</span><span>600.00</span></td>
+			</tr>
+		</table>
+		<table class="inventory">
+			<thead>
+				<tr>
+					<th><span contenteditable>Código</span></th>
+					<th><span contenteditable>Descripción</span></th>
+					<th><span contenteditable>Precio Unitario</span></th>
+					<th><span contenteditable>Descuento</span></th>
+					<th><span contenteditable>Cantidad</span></th>
+					<th><span contenteditable>Precio</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a class="cut">-</a><span contenteditable>0135</span></td>
+					<td><span contenteditable>Front End Consultation</span></td>
+					<td><span data-prefix>$</span><span contenteditable>50.00</span></td>
+					<td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+					<td><span contenteditable>8</span></td>
+					<td><span data-prefix>$</span><span>400.00</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<a class="add">+</a>
+		<table class="balance">
+			<tr>
+				<th><span contenteditable>Subtotal</span></th>
+				<td><span data-prefix>$</span><span>400.00</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Total IVA (22%)</span></th>
+				<td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Redondeo</span></th>
+				<td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+			</tr>
+			<tr>
+				<th><span contenteditable>Total</span></th>
+				<td><span data-prefix>$</span><span>600.00</span></td>
+			</tr>
+		</table>
+	</article>
+
+
+
+	<aside>
+		<!-- <h1><span contenteditable>Additional Notes</span></h1> -->
+		<div contenteditable>
+			<p>Res. Nro. 7792/2018 </p>
+			<p>Puede verificar comprobante en www.dgi.gub.uy I.V.A al día </p>
+			<p>Nro. de CAE 90200854939 </p>
+			<p>Rango de CAE: Serie D No 5886001 al 8886000</p>
+		</div>
+	</aside>
+
+	<br>
+	<br>
+	<br>
+
+	<div class="wrapperSt">
+		<button class="printSt" onclick="printFunction()">Imprimir</button>
+	</div>
+</body>
+
+</html>
