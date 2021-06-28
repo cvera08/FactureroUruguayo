@@ -5,9 +5,11 @@
 	<title>Invoice</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="license" href="https://www.opensource.org/licenses/mit-license/">
-	<script src="script.js"></script>
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<script type="text/javascript" src="date.js"></script>
+
 	<script>
 		function printFunction() {
 			window.print();
@@ -15,7 +17,7 @@
 	</script>
 </head>
 
-<body id="printAllBody">
+<body id="printAllBody" onload="printDateInTodaysDateID()">
 	<header>
 		<!-- <h1>Invoice</h1> -->
 		<address contenteditable>
@@ -27,6 +29,7 @@
 		<span><img alt="" src="http://www.fernandezcontadorespublicos.com/Content/Logo2.jpg"><input type="file"
 				accept="image/*"></span>
 	</header>
+
 	<article>
 		<h1>Recipient</h1>
 		<address contenteditable>
@@ -34,8 +37,9 @@
 		</address>
 		<table class="meta">
 			<tr>
-				<th><span contenteditable>Fecha</span></th>
-				<td><span contenteditable>01 Junio, 2021</span></td>
+				<th><span>Fecha</span></th>
+				<!-- The text will be completed with today's date: (<body onload="printDateInTodaysDateID()">)-->
+				<td><span contenteditable id="todaysDate">01 Enero, 2021</span></td>
 			</tr>
 			<tr>
 				<th><span contenteditable>RUT Emisor</span></th>
