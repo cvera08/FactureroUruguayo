@@ -143,7 +143,7 @@ function updateInvoice() {
 	cells = document.querySelectorAll('table.balance td:last-child span:last-child');
 
 	// set subtotal
-	cells[0].innerHTML = subtotal;
+	document.getElementsByClassName("subtotal")[0].innerHTML = subtotal;
 
 	// set balance and meta balance
 	//cells[2].innerHTML = document.querySelector('table.meta tr:last-child td:last-child span:last-child').innerHTML = parsePrice(total - parseFloatHTML(cells[1]));
