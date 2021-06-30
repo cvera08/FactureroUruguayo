@@ -70,10 +70,10 @@ function generateTableRow() {
 
 	emptyColumn.innerHTML = '<td><a class="cut">-</a><span contenteditable></span></td>' +
 		'<td><span contenteditable></span></td>' +
+		'<td><span data-prefix>$</span><span contenteditable class="unitPrice">0.00</span></td>' +
 		'<td><span data-prefix>$</span><span contenteditable>0.00</span></td>' +
-		'<td><span data-prefix>$</span><span contenteditable>0.00</span></td>' +
-		'<td><span contenteditable>0</span></td>' +
-		'<td><span data-prefix>$</span><span>0.00</span></td>';
+		'<td><span contenteditable class="amount">0</span></td>' +
+		'<td><span data-prefix>$</span><span class="price">0.00</span></td>';
 
 	return emptyColumn;
 }
@@ -121,16 +121,18 @@ function updateInvoice() {
 		// get inventory row cells
 		cells = a[i].querySelectorAll('span:last-child');
 
-		// set price as cell[2] * cell[3]
-		// price = parseFloatHTML(cells[2]) * parseFloatHTML(cells[3]);
-		price = parseFloatHTML(cells[2]) * parseFloatHTML(cells[4]);
+		// set price as "unitPrice * amount" (cell[2] * cell[3])
+		// console.log(cells);
+		elemUnitPrice = document.getElementsByClassName("unitPrice")[i];
+		elemAmount = document.getElementsByClassName("amount")[i];
+		elemPrice = document.getElementsByClassName("price")[i];
+		price = parseFloatHTML(elemUnitPrice) * parseFloatHTML(elemAmount);
 
 		// add price to total
 		total += price;
 
 		// set row total
-		// cells[4].innerHTML = price;
-		cells[5].innerHTML = price;
+		elemPrice.innerHTML = price;
 	}
 
 	// update balance cells
