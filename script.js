@@ -71,7 +71,7 @@ function generateTableRow() {
 	emptyColumn.innerHTML = '<td><a class="cut">-</a><span contenteditable></span></td>' +
 		'<td><span contenteditable></span></td>' +
 		'<td><span data-prefix>$</span><span contenteditable class="unitPrice">0.00</span></td>' +
-		'<td><span data-prefix>$</span><span contenteditable>0.00</span></td>' +
+		'<td><span data-prefix>$</span><span contenteditable class="discount">0.00</span></td>' +
 		'<td><span contenteditable class="amount">0</span></td>' +
 		'<td><span data-prefix>$</span><span class="price">0.00</span></td>';
 
@@ -121,12 +121,13 @@ function updateInvoice() {
 		// get inventory row cells
 		cells = a[i].querySelectorAll('span:last-child');
 
-		// set price as "unitPrice * amount" (cell[2] * cell[3])
+		// set price as "(unitPrice - discount) * amount" (cell[2] * cell[3])
 		// console.log(cells);
 		elemUnitPrice = document.getElementsByClassName("unitPrice")[i];
+		elemDiscount = document.getElementsByClassName("discount")[i];
 		elemAmount = document.getElementsByClassName("amount")[i];
 		elemPrice = document.getElementsByClassName("price")[i];
-		price = parseFloatHTML(elemUnitPrice) * parseFloatHTML(elemAmount);
+		price = (parseFloatHTML(elemUnitPrice) - parseFloatHTML(elemDiscount) )* parseFloatHTML(elemAmount);
 
 		// add price to total
 		total += price;
