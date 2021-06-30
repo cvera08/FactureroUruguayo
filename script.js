@@ -111,8 +111,8 @@ function updateNumber(e) {
 /* ========================================================================== */
 
 function updateInvoice() {
-	var total = 0;
-	var cells, price, total, a, i;
+	var subtotal = 0;
+	var cells, price, subtotal, a, i;
 
 	// update inventory cells
 	// ======================
@@ -130,7 +130,7 @@ function updateInvoice() {
 		price = (parseFloatHTML(elemUnitPrice) - parseFloatHTML(elemDiscount) )* parseFloatHTML(elemAmount);
 
 		// add price to total
-		total += price;
+		subtotal += price;
 
 		// set row total
 		elemPrice.innerHTML = price;
@@ -143,7 +143,7 @@ function updateInvoice() {
 	cells = document.querySelectorAll('table.balance td:last-child span:last-child');
 
 	// set subtotal
-	cells[0].innerHTML = total;
+	cells[0].innerHTML = subtotal;
 
 	// set balance and meta balance
 	//cells[2].innerHTML = document.querySelector('table.meta tr:last-child td:last-child span:last-child').innerHTML = parsePrice(total - parseFloatHTML(cells[1]));
@@ -154,7 +154,7 @@ function updateInvoice() {
 
 	//set total
 	elemTotal = document.getElementsByClassName("total")[0];
-	elemTotal.innerHTML = total + parseFloatHTML(elemIVA);
+	elemTotal.innerHTML = subtotal + parseFloatHTML(elemIVA);
 
 	// update prefix formatting
 	// ========================
