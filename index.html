@@ -17,7 +17,7 @@
 	</script>
 </head>
 
-<body id="printAllBody" onload="printDateInTodaysDateID()">
+<body id="printAllBody" onload="printDateInTodaysDateID(), printDatePlus15InDueDate()">
 	<header>
 		<!-- <h1>Invoice</h1> -->
 		<address contenteditable>
@@ -63,7 +63,9 @@
 			</tr>
 			<tr>
 				<th><span>Fecha de Vencimiento</span></th>
-				<td><span contenteditable>30/06/2021</span></td>
+				<td><input id="dpDueDate" type="date" onchange="changeDP()" value=""/>
+					<span id="spDueDate">01 Enero, 2021</span>
+				</td>
 			</tr>
 			<tr>
 				<th><span>RUT Comprador</span></th>
