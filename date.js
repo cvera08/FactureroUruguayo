@@ -9,16 +9,10 @@ function printDatePlus15InDueDate() {
     document.getElementById("spDueDate").innerHTML = getDateInSpFormat(today15);
 }
 
-function changeDueDateInputSpanishFormat() {
-    var selectedDate = document.getElementById("dpDueDate").value;
+function changeDateInputSpanishFormat(id1, id2){
+    var selectedDate = document.getElementById(id1).value;
     var selectedDateFixed = addDays(new Date(selectedDate), 1); //Because if not we loose 1 day (UTC vs GMT vs GMT-3)
-    document.getElementById("spDueDate").innerHTML = getDateInSpFormat(selectedDateFixed);
-}
-
-function changeTodaysDateInputSpanishFormat() {
-    var selectedDate = document.getElementById("todaysDate").value;
-    var selectedDateFixed = addDays(new Date(selectedDate), 1); //Because if not we loose 1 day (UTC vs GMT vs GMT-3)
-    document.getElementById("spTodaysDate").innerHTML = getDateInSpFormat(selectedDateFixed);
+    document.getElementById(id2).innerHTML = getDateInSpFormat(selectedDateFixed);
 }
 
 function getDateInSpFormat(originalDate) {
