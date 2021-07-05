@@ -21,10 +21,10 @@
 	<header>
 		<!-- <h1>Invoice</h1> -->
 		<address contenteditable>
-			<p>Jonathan Neal</p>
-			<p>101 E. Chapman Ave<br>Orange, CA 92866</p>
-			<p>(800) 555-123455</p>
-			<p>jonathan@orangetest.com</p>
+			<p>Fernandez Contadores Públicos</p>
+			<p>Av. Brasil 2446 piso 7 apto 701 Montevideo, <br>11300 Departamento de Montevideo</p>
+			<p>+598 99 000 111</p>
+			<p>contable@test.com</p>
 		</address>
 		<span><img alt="" src="http://www.fernandezcontadorespublicos.com/Content/Logo2.jpg"><input type="file"
 				accept="image/*"></span>
@@ -33,13 +33,19 @@
 	<article>
 		<h1>Recipient</h1>
 		<address contenteditable>
-			<!-- <p>Some Company<br>c/o Some Guy</p> -->
+			<p>Jonathan Neal</p>
+			<p>101 E. Chapman Ave<br>Orange, CA 92866</p>
+			<p>(800) 555-123455</p>
+			<p>jonathan@orangetest.com</p>
 		</address>
 		<table class="meta">
 			<tr>
 				<th><span>Fecha</span></th>
 				<!-- The text will be completed with today's date: (<body onload="printDateInTodaysDateID()">)-->
-				<td><span contenteditable id="todaysDate">01 Enero, 2021</span></td>
+				<td>
+					<input id="todaysDate" type="date" onchange="changeTodaysDateInputSpanishFormat()" value="" />
+					<span id="spTodaysDate" style="color: gray;">01 Enero, 2020</span>
+				</td>
 			</tr>
 			<tr>
 				<th><span>RUT Emisor</span></th>
