@@ -9,7 +9,7 @@ function printDatePlus15InDueDate() {
     document.getElementById("spDueDate").innerHTML = getDateInSpFormat(today15);
 }
 
-function changeDP() {
+function changeDueDateInputSpanishFormat() {
     var selectedDate = document.getElementById("dpDueDate").value;
     var selectedDateFixed = addDays(new Date(selectedDate), 1); //Because if not we loose 1 day (UTC vs GMT vs GMT-3)
     document.getElementById("spDueDate").innerHTML = getDateInSpFormat(selectedDateFixed);
@@ -35,7 +35,7 @@ function getDateInSpFormat(originalDate) {
 function getDateInYYYMMDDFormat(originalDate) { // I won't use new Date().toISOString().split('T')[0]; because generates issues with internationalization + converting dates (GMT vs GMT-3 vs UTC vs ISO)
     date = new Date(originalDate);
     var dd = String(date.getDate()).padStart(2, '0');
-    var mm = String(date.getMonth()+1).padStart(2, '0');
+    var mm = String(date.getMonth() + 1).padStart(2, '0');
     var yyyy = date.getFullYear();
 
     formattedDate = yyyy + '-' + mm + '-' + dd;
