@@ -43,7 +43,7 @@
 				<th><span>Fecha</span></th>
 				<!-- The text will be completed with today's date: (<body onload="printDateInTodaysDateID()">)-->
 				<td>
-					<input id="todaysDate" type="date" onchange="changeTodaysDateInputSpanishFormat()" value="" />
+					<input id="todaysDate" type="date" onchange="changeDateInputSpanishFormat('todaysDate', 'spTodaysDate')" value="" />
 					<span id="spTodaysDate" style="color: gray;">01 Enero, 2020</span>
 				</td>
 			</tr>
@@ -70,7 +70,7 @@
 			<tr>
 				<th><span>Fecha de Vencimiento</span></th>
 				<td>
-					<input id="dpDueDate" type="date" onchange="changeDueDateInputSpanishFormat()" value="" />
+					<input id="dpDueDate" type="date" onchange="changeDateInputSpanishFormat('dpDueDate', 'spDueDate')" value="" />
 					<span id="spDueDate" style="color: gray;">01 Enero, 2021</span>
 				</td>
 			</tr>
