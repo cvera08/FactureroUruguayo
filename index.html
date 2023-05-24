@@ -43,7 +43,7 @@
 			</tr>
 			<tr>
 				<th><span>RUT Emisor</span></th>
-				<td><span contenteditable>212602710010</span></td>
+				<td><span style="color: gray;">212602710010</span></td>
 			</tr>
 			<tr>
 				<th><span>Serie</span></th>
@@ -55,7 +55,7 @@
 			</tr>
 			<tr>
 				<th><span>Tipo de Factura</span></th>
-				<td><span contenteditable>e-Factura</span></td>
+				<td><span style="color: gray;">e-Factura</span></td>
 			</tr>
 			<tr>
 				<th><span>Forma de Pago</span></th>
@@ -63,13 +63,16 @@
 			</tr>
 			<tr>
 				<th><span>Fecha de Vencimiento</span></th>
-				<td><input id="dpDueDate" type="date" onchange="changeDP()" value=""/>
-					<span id="spDueDate">01 Enero, 2021</span>
+				<td>
+					<input id="dpDueDate" type="date" onchange="changeDP()" value="" />
+					<span id="spDueDate" style="color: gray;">01 Enero, 2021</span>
 				</td>
 			</tr>
 			<tr>
 				<th><span>RUT Comprador</span></th>
-				<td><span contenteditable>170307480019</span></td>
+				<td>
+					<input value="170307480019" type="number">
+				</td>
 			</tr>
 			<tr>
 				<th><span>Moneda</span></th>
