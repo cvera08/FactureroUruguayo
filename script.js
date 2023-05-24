@@ -152,9 +152,10 @@ function updateInvoice() {
 	elemIVA = document.getElementsByClassName("iva")[0];
 	elemIVA.innerHTML = parseFloatHTML(cells[0]) * 0.22;
 
-	//set total
+	//set total (subtotal + IVA + round) //round: could be positive or negative
 	elemTotal = document.getElementsByClassName("total")[0];
-	elemTotal.innerHTML = subtotal + parseFloatHTML(elemIVA);
+	elemRound = document.getElementsByClassName("round")[0];
+	elemTotal.innerHTML = subtotal + parseFloatHTML(elemIVA) + parseFloatHTML(elemRound);
 
 	// update prefix formatting
 	// ========================
